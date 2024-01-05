@@ -1,0 +1,35 @@
+(library
+  (name simpledict)
+  (modules
+    simpledict)
+  (libraries
+    core)
+  (preprocess
+  (pps ppx_deriving.show)))
+
+(library
+  (name utils)
+  (modules
+    utils)
+  (libraries
+    core
+    core_unix
+    core_unix.sys_unix
+    stdio
+    simpledict)
+    (preprocess
+  (pps ppx_jane)))
+
+(executable
+  (name keywordcount)
+  (modules
+    keywordcount)
+  (libraries
+    core
+    core_unix
+    core_unix.sys_unix
+    stdio
+    simpledict
+    utils)
+  (preprocess
+  (pps ppx_jane)))

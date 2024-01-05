@@ -1,0 +1,112 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /home/echoi51/fpse23/assignments/assignment5
+# Auto-detected concurrency: 8
+$ /home/echoi51/.opam/default/bin/ocamlc.opt -config > /tmp/dune_48db2a_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; ocaml_bin = External "/home/echoi51/.opam/default/bin"
+#  ; ocaml = Ok External "/home/echoi51/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/home/echoi51/.opam/default/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/home/echoi51/.opam/default/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/home/echoi51/.opam/default/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/home/echoi51/.opam/default/bin/ocamlmklib"
+#  ; installed_env =
+#      map
+#        { "INSIDE_DUNE" :
+#            "/home/echoi51/fpse23/assignments/assignment5/_build/default"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths =
+#      [ External "/home/echoi51/.opam/default/lib/ocaml"
+#      ; External "/home/echoi51/.opam/default/lib"
+#      ]
+#  ; ocaml_config =
+#      { version = "5.1.0"
+#      ; standard_library_default = "/home/echoi51/.opam/default/lib/ocaml"
+#      ; standard_library = "/home/echoi51/.opam/default/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "gcc"
+#      ; ocamlc_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; bytecomp_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "x86_64-pc-linux-gnu"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X033"
+#      ; cmi_magic_number = "Caml1999I033"
+#      ; cmo_magic_number = "Caml1999O033"
+#      ; cma_magic_number = "Caml1999A033"
+#      ; cmx_magic_number = "Caml1999Y033"
+#      ; cmxa_magic_number = "Caml1999Z033"
+#      ; ast_impl_magic_number = "Caml1999M033"
+#      ; ast_intf_magic_number = "Caml1999N033"
+#      ; cmxs_magic_number = "Caml1999D033"
+#      ; cmt_magic_number = "Caml1999T033"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  ; instrument_with = []
+#  }
+$ (cd _build/default && /usr/bin/zip -r assignment5.zip src/monads.ml src/monads.mli src/discussion.txt src/dune)
+>   adding: src/monads.ml (deflated 66%)
+>   adding: src/monads.mli (deflated 61%)
+>   adding: src/discussion.txt (deflated 61%)
+>   adding: src/dune (deflated 23%)
+$ (cd _build/default && /home/echoi51/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -shared -linkall -I src -o src/monads.cmxs src/monads.cmxa)
+$ (cd _build/default && /home/echoi51/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I src/.monads.objs/byte -I /home/echoi51/.opam/default/lib/base -I /home/echoi51/.opam/default/lib/base/base_internalhash_types -I /home/echoi51/.opam/default/lib/base/caml -I /home/echoi51/.opam/default/lib/base/md5 -I /home/echoi51/.opam/default/lib/base/shadow_stdlib -I /home/echoi51/.opam/default/lib/base_bigstring -I /home/echoi51/.opam/default/lib/base_quickcheck -I /home/echoi51/.opam/default/lib/base_quickcheck/ppx_quickcheck/runtime -I /home/echoi51/.opam/default/lib/bin_prot -I /home/echoi51/.opam/default/lib/bin_prot/shape -I /home/echoi51/.opam/default/lib/core -I /home/echoi51/.opam/default/lib/core/base_for_tests -I /home/echoi51/.opam/default/lib/core/command -I /home/echoi51/.opam/default/lib/core/filename_base -I /home/echoi51/.opam/default/lib/core/heap_block -I /home/echoi51/.opam/default/lib/core/univ_map -I /home/echoi51/.opam/default/lib/core/validate -I /home/echoi51/.opam/default/lib/fieldslib -I /home/echoi51/.opam/default/lib/int_repr -I /home/echoi51/.opam/default/lib/jane-street-headers -I /home/echoi51/.opam/default/lib/parsexp -I /home/echoi51/.opam/default/lib/ppx_assert/runtime-lib -I /home/echoi51/.opam/default/lib/ppx_bench/runtime-lib -I /home/echoi51/.opam/default/lib/ppx_compare/runtime-lib -I /home/echoi51/.opam/default/lib/ppx_enumerate/runtime-lib -I /home/echoi51/.opam/default/lib/ppx_expect/collector -I /home/echoi51/.opam/default/lib/ppx_expect/common -I /home/echoi51/.opam/default/lib/ppx_expect/config -I /home/echoi51/.opam/default/lib/ppx_expect/config_types -I /home/echoi51/.opam/default/lib/ppx_hash/runtime-lib -I /home/echoi51/.opam/default/lib/ppx_here/runtime-lib -I /home/echoi51/.opam/default/lib/ppx_inline_test/config -I /home/echoi51/.opam/default/lib/ppx_inline_test/runtime-lib -I /home/echoi51/.opam/default/lib/ppx_log/types -I /home/echoi51/.opam/default/lib/ppx_module_timer/runtime -I /home/echoi51/.opam/default/lib/ppx_sexp_conv/runtime-lib -I /home/echoi51/.opam/default/lib/ppx_stable_witness/runtime -I /home/echoi51/.opam/default/lib/ppx_stable_witness/stable_witness -I /home/echoi51/.opam/default/lib/sexplib -I /home/echoi51/.opam/default/lib/sexplib0 -I /home/echoi51/.opam/default/lib/splittable_random -I /home/echoi51/.opam/default/lib/stdio -I /home/echoi51/.opam/default/lib/time_now -I /home/echoi51/.opam/default/lib/typerep -I /home/echoi51/.opam/default/lib/variantslib -intf-suffix .ml -no-alias-deps -opaque -o src/.monads.objs/byte/monads.cmo -c -impl src/monads.pp.ml)
+$ (cd _build/default && /home/echoi51/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o src/monads.cma src/.monads.objs/byte/monads.cmo)

@@ -1,0 +1,10 @@
+; You need to add your own stanzas to this dune file.
+
+(test
+  (name tests)
+  (libraries
+    core
+    ounit2
+    monads
+  )
+  (preprocess (pps ppx_jane)))

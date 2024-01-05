@@ -1,0 +1,34 @@
+
+-------------------
+DISCUSSION EXERCISE
+-------------------
+
+One problem with monad encodings is the run-time complexity might be greater.
+
+For a string s of length n, calculate the asymptotic complexity of
+  (a) are_balanced_mutable s
+  (b) are_balanced_monadic s
+respectively. Show your work so you can get partial credit.
+
+Write your answer below.
+
+
+(a) are_balanced_mutable (assuming it uses mutable data structures like a stack):
+
+Breaking down the function are_balanced_mutable:
+The Stack.create () function has constant time complexity, O(1).
+Iterating over the characters in the string, the String.fold operation, has a time complexity of O(n).
+Stack operations like Stack.push and Stack.pop_exn and Stack.is_empty are assumed to have constant time complexity.
+Therefore, the asymptotic complexity of this function is O(n).
+
+(b) are_balanced_monadic (assuming it uses a monadic approach, like a State monad):
+
+The are_balanced_monadic function uses other helper functions like parse and main_monadic. Looking at the parse function, it uses
+the Stack_monad.push and Stack_monad.pop operations, along with the monadic operations (>>= and >>|), which have a constant time complexity.
+The main_monadic function uses the String.fold operation which processes each character in the string, and for each character, the parse_and_accumulate function is called.
+The parse_and_accumulate function calls parse for each character, and therefore it has an overall time complexity is O(n), where n is the length of the input string. 
+Finally, the are_balanced_monadic function uses the run function, which executes a sequence of operations with an empty initial state and returns the final result, so
+the complexity is determined by the other main_monadic function. Therefore, the asymptotic complexity of this function is O(n).
+
+
+

@@ -1,0 +1,23 @@
+# dune run
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /home/echoi51/.cache/dune/db
+# Workspace root: /home/echoi51/fpse23/FunctionalProgramming/assignment1
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; installed_env =
+#      map
+#        { "INSIDE_DUNE" :
+#            "/home/echoi51/fpse23/FunctionalProgramming/assignment1/_build/default"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; instrument_with = []
+#  }
+$ /home/echoi51/.opam/default/bin/ocamlc.opt -config > /tmp/dune_df318f_output
